@@ -13,15 +13,30 @@ let myLibrary = [
     }
 ]
 
-function Book() {
+
+function Book(name, author, numpages, read) {
+    this.name = name;
+    this.author = author;
+    this.numpages = numpages;
+    this.read = read;
     // the constructor...
 }
 
+
 function addBookToLibrary() {
+    let name = $('#name'); 
+    let author = $('#author');
+    let numpages = $('#numPages')
+    const book = new Book(name, author, numPages, false);
+    
+    myLibrary.push(book);
     // do stuff here
+    listBooks();
+    console.log(myLibrary);
 }
 
 function listBooks() {
+    $('#list').empty()
     for (i = 0; i < myLibrary.length; i++) {
         $('#list').append(
             $('<div>').prop({
