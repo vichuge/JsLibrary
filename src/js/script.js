@@ -33,7 +33,7 @@ function listBooks() {
                 //    'Author: ' + myLibrary[i].author,
                 className: 'col-4'
             }),
-            d.append('<div class="card" style="width: 18rem;"><div class="card-body"><h5 class="card-title">'+myLibrary[i].name+'</h5><h6 class="card-subtitle mb-2 text-muted">'+myLibrary[i].author+'</h6><p class="card-text">Pages:'+myLibrary[i].numpages+', read?: '+myLibrary[i].read+'</p><a onClick="deleteBook('+i+')" class="card-link">Delete</a></div></div>')
+            d.append('<div class="card" style="width: 18rem;"><div class="card-body"><h5 class="card-title">'+myLibrary[i].name+'</h5><h6 class="card-subtitle mb-2 text-muted">'+myLibrary[i].author+'</h6><p class="card-text">Pages:'+myLibrary[i].numpages+', read?: '+myLibrary[i].read+'</p><button class="btn btn-primary" onClick="deleteBook('+i+')" class="card-link">Delete</button><button class="btn btn-primary" onClick="readBook('+i+')" class="card-link">Change read</button></div></div>')
         );
         
         //console.log(myLibrary[i])
@@ -45,6 +45,10 @@ function deleteBook(id) {
     listBooks()
 }
 
+function readBook(id) {
+    myLibrary[id].read = !myLibrary[id].read
+    listBooks()
+}
 $(document).ready(function () {
     listBooks()
 });
