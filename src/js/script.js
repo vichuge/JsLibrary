@@ -19,9 +19,9 @@ function addBookToLibrary() {
 }
 
 function emptyInputs() {
-  ('#name').val('');
-  ('#author').val('');
-  ('#numPages').val('');
+  $('#name').val('');
+  $('#author').val('');
+  $('#numPages').val('');
 }
 
 function listBooks() {
