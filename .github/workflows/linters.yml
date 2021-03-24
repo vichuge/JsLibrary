@@ -8,7 +8,11 @@ env:
 jobs:
   eslint:
     name: ESLint
+<<<<<<< HEAD
     runs-on: ubuntu-18.04
+=======
+    runs-on: ubuntu-20.04
+>>>>>>> 0bfb582dc3065d2f25a2fcdf2194e21e0653ae10
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
