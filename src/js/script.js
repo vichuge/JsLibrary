@@ -1,52 +1,48 @@
-let myLibrary = [
-    {
-        name: 'The lord of the rings',
-        author: 'J. R. R. Tolken',
-        numPages: 93,
-        read: false
-    },
-    {
-        name: 'Harry Potter',
-        author: 'J. K. Rowling',
-        numPages: 101,
-        read: true
-    }
-]
-
+let myLibrary = []
 
 function Book(name, author, numpages, read) {
     this.name = name;
     this.author = author;
     this.numpages = numpages;
     this.read = read;
-    // the constructor...
 }
 
-
 function addBookToLibrary() {
-    let name = $('#name'); 
-    let author = $('#author');
-    let numpages = $('#numPages')
-    const book = new Book(name, author, numPages, false);
-    
-    myLibrary.push(book);
-    // do stuff here
-    listBooks();
-    console.log(myLibrary);
+    let name = $('#name').val()
+    let author = $('#author').val()
+    let numpages = $('#numPages').val()
+    const book = new Book(name, author, numpages, false)
+    myLibrary.push(book)
+    listBooks()
+    emptyInputs()
+    console.log(myLibrary)
+}
+
+function emptyInputs() {
+    $('#name').val('')
+    $('#author').val('')
+    $('#numPages').val('')
 }
 
 function listBooks() {
     $('#list').empty()
     for (i = 0; i < myLibrary.length; i++) {
         $('#list').append(
-            $('<div>').prop({
-                innerHTML: 'Name: ' + myLibrary[i].name + '\r\n' +
-                    'Author: ' + myLibrary[i].author,
-                className: 'col-3'
-            })
+            d = $('<div>').prop({
+                //innerHTML: 'Name: ' + myLibrary[i].name + '\r\n' +
+                //    'Author: ' + myLibrary[i].author,
+                className: 'col-4'
+            }),
+            d.append('<div class="card" style="width: 18rem;"><div class="card-body"><h5 class="card-title">'+myLibrary[i].name+'</h5><h6 class="card-subtitle mb-2 text-muted">'+myLibrary[i].author+'</h6><p class="card-text">Pages:'+myLibrary[i].numpages+', read?: '+myLibrary[i].read+'</p><a onClick="deleteBook('+i+')" class="card-link">Delete</a></div></div>')
         );
+        
         //console.log(myLibrary[i])
     }
+}
+
+function deleteBook(id) {
+    myLibrary.splice(id, 1)
+    listBooks()
 }
 
 $(document).ready(function () {
