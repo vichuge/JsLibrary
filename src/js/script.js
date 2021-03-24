@@ -45,6 +45,10 @@ function readBook(id) {
   myLibrary[id].read = !myLibrary[id].read;
   listBooks();
 }
+<<<<<<< HEAD
+$(document).ready(() => {
+=======
 $(document).ready(function () {
+>>>>>>> 0bfb582dc3065d2f25a2fcdf2194e21e0653ae10
   listBooks();
 });
