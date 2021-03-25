@@ -34,6 +34,10 @@ function emptyInputs() {
   document.getElementById('numPages').value = '';
 }
 
+function closeModal() {
+  document.getElementById('close').click();
+}
+
 function addBookToLibrary() {
   const name = document.getElementById('name').value;
   const author = document.getElementById('author').value;
@@ -53,8 +57,8 @@ function addBookToLibrary() {
   if (numpages === '') {
     errors.innerHTML += 'Number pages can\'t be blank';
     return;
-  } 
-  if (!Number.isInteger(parseInt(numpages))) {
+  }
+  if (!Number.isInteger(parseInt(numpages, 10))) {
     errors.innerHTML += 'Number pages needs to be a number';
     return;
   }
@@ -64,10 +68,6 @@ function addBookToLibrary() {
   listBooks();
   emptyInputs();
   closeModal();
-}
-
-function closeModal() {
-  document.getElementById('close').click();
 }
 
 function deleteBook(id) {
