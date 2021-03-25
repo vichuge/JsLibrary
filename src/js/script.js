@@ -40,20 +40,21 @@ function addBookToLibrary() {
   const numpages = document.getElementById('numPages').value;
   const read = document.getElementById('chk');
 
-  let errors = document.getElementById('error');
+  const errors = document.getElementById('error');
   errors.innerHTML = '';
-  if (name == '') {
+  if (name === '') {
     errors.innerHTML += 'Name can\'t be blank';
     return;
   }
-  if (author == '') {
+  if (author === '') {
     errors.innerHTML += 'Author can\'t be blank';
     return;
   }
-  if (numpages == '') {
+  if (numpages === '') {
     errors.innerHTML += 'Number pages can\'t be blank';
     return;
-  } else if (!Number.isInteger(parseInt(numpages))) {
+  } 
+  if (!Number.isInteger(parseInt(numpages))) {
     errors.innerHTML += 'Number pages needs to be a number';
     return;
   }
@@ -66,7 +67,7 @@ function addBookToLibrary() {
 }
 
 function closeModal() {
-  document.getElementById("close").click();
+  document.getElementById('close').click();
 }
 
 function deleteBook(id) {
