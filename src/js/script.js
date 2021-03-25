@@ -38,10 +38,35 @@ function addBookToLibrary() {
   const name = document.getElementById('name').value;
   const author = document.getElementById('author').value;
   const numpages = document.getElementById('numPages').value;
-  const book = new Book(name, author, numpages, false);
+  const read = document.getElementById('chk');
+
+  let errors = document.getElementById('error');
+  errors.innerHTML = '';
+  if (name == '') {
+    errors.innerHTML += 'Name can\'t be blank';
+    return;
+  }
+  if (author == '') {
+    errors.innerHTML += 'Author can\'t be blank';
+    return;
+  }
+  if (numpages == '') {
+    errors.innerHTML += 'Number pages can\'t be blank';
+    return;
+  } else if (!Number.isInteger(parseInt(numpages))) {
+    errors.innerHTML += 'Number pages needs to be a number';
+    return;
+  }
+
+  const book = new Book(name, author, numpages, read.checked);
   myLibrary.push(book);
   listBooks();
   emptyInputs();
+  closeModal();
+}
+
+function closeModal() {
+  document.getElementById("close").click();
 }
 
 function deleteBook(id) {
