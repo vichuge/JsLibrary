@@ -1,8 +1,13 @@
 const myLibrary = [];
 
-const Book = (name, author, numpages, read) => ({
-  name, author, numpages, read,
-});
+class Book {
+  constructor(name, author, numpages, read) {
+    this.name = name;
+    this.author = author;
+    this.numpages = numpages;
+    this.read = read;
+  }
+}
 
 function listBooks() {
   document.getElementById('list').innerHTML = '';
@@ -60,7 +65,7 @@ function addBookToLibrary() {
     return;
   }
 
-  const book = Book(name, author, numpages, read.checked);
+  const book = new Book(name, author, numpages, read.checked);
   myLibrary.push(book);
   listBooks();
   emptyInputs();
