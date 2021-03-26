@@ -1,6 +1,8 @@
 const myLibrary = [];
 
-const Book = (name, author, numpages, read) => { return { name, author, numpages, read }; };
+const Book = (name, author, numpages, read) => { return {
+  name, author, numpages, read
+}; };
 
 function listBooks() {
   document.getElementById('list').innerHTML = '';
