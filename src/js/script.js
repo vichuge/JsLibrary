@@ -1,9 +1,9 @@
 const myLibrary = [];
 
 const Book = (name, author, numpages, read) => {
-
-  return { name, author, numpages, read };
-
+  return {
+    name, author, numpages, read
+  };
 };
 
 function listBooks() {
