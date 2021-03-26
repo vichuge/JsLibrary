@@ -1,16 +1,9 @@
 const myLibrary = [];
 
-/*  function Book(name, author, numpages, read) {
-  this.name = name;
-  this.author = author;
-  this.numpages = numpages;
-  this.read = read;
-} */
-
 const Book = (name, author, numpages, read) => {
 
   return { name, author, numpages, read };
-  
+
 };
 
 function listBooks() {
@@ -69,7 +62,6 @@ function addBookToLibrary() {
     return;
   }
 
-  //  const book = new Book(name, author, numpages, read.checked);
   const book = Book(name, author, numpages, read.checked);
   myLibrary.push(book);
   listBooks();
