@@ -3,7 +3,7 @@
 
 <p align="center">Library in JavaScript is a practice project, which includes the user input functionality and managing the dynamically DOM manipulation.We used Javascript, HTML5 and CSS3, to implement it</p>
 
-
+![screenshot](/screenshots/jlibrary.png)
 
 ## Live Link Demo
 
